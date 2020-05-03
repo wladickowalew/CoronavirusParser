@@ -42,6 +42,18 @@ public class Parser {
         return obj.text();
     }
     
+    public static String[] getCountriesNames(){
+        String[] names = new String[countries.size()];
+        for(int i = 0; i < countries.size(); i++){
+            names[i] = countries.get(i).getName();
+        }
+        return names;
+    }
+    
+    public static Country getCountry(int index){
+        return countries.get(index); 
+    }
+    
     public static void downloadCountriesList(){
         Elements objects = html.select("#world_stats .flex-table");
         countries = new ArrayList<>();

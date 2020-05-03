@@ -5,6 +5,9 @@
  */
 package com.mycompany.coronavirusguiproject;
 
+import Objects.Country;
+import java.util.ArrayList;
+
 /**
  *
  * @author ROOT
@@ -22,6 +25,7 @@ public class Form extends javax.swing.JFrame {
     
     public void getData(){
         firstLabel.setText(Parser.getLabelText());
+        countriesList.setListData(Parser.getCountriesNames());
     }
 
     /**
@@ -34,6 +38,10 @@ public class Form extends javax.swing.JFrame {
     private void initComponents() {
 
         firstLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        countriesList = new javax.swing.JList<>();
+        nameObject = new javax.swing.JLabel();
+        coutnryName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,21 +49,61 @@ public class Form extends javax.swing.JFrame {
         firstLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         firstLabel.setText("jLabel1");
 
+        countriesList.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        countriesList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        countriesList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                countriesListMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(countriesList);
+
+        nameObject.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject.setText("Страна:");
+
+        coutnryName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(firstLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(nameObject, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(coutnryName, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(firstLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 528, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nameObject, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(coutnryName))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void countriesListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_countriesListMouseClicked
+        int index = countriesList.getSelectedIndex();
+        Country country = Parser.getCountry(index);
+        coutnryName.setText(country.getName());
+    }//GEN-LAST:event_countriesListMouseClicked
 
     /**
      * @param args the command line arguments
@@ -93,6 +141,10 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> countriesList;
+    private javax.swing.JLabel coutnryName;
     private javax.swing.JLabel firstLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nameObject;
     // End of variables declaration//GEN-END:variables
 }
