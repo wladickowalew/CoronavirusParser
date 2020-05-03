@@ -12,26 +12,21 @@ package Objects;
 public class Country {
     
     private String name;
-    private int infected;
-    private int cured;
-    private int critic;
-    private int death;
-    
-    private int infectedPerDay;
-    private int deathPerDay;
-    
-    
-    {
-        infectedPerDay = 0;
-        deathPerDay = 0;
-    }
+    private String infected;
+    private String cured;
+    private String critic;
+    private String death;    
+    private String infectedPerDay;
+    private String deathPerDay;
 
-    public Country(String name, int infected, int cured, int critic, int death) {
+    public Country(String name, String infected, String cured, String critic, String death, String infectedPerDay, String deathPerDay) {
         this.name = name;
         this.infected = infected;
         this.cured = cured;
         this.critic = critic;
         this.death = death;
+        this.infectedPerDay = infectedPerDay;
+        this.deathPerDay = deathPerDay;
     }
 
     public String getName() {
@@ -42,52 +37,63 @@ public class Country {
         this.name = name;
     }
 
-    public int getInfected() {
+    public String getInfected() {
         return infected;
     }
 
-    public void setInfected(int infected) {
+    public void setInfected(String infected) {
         this.infected = infected;
     }
 
-    public int getCured() {
+    public String getCured() {
         return cured;
     }
 
-    public void setCured(int cured) {
+    public void setCured(String cured) {
         this.cured = cured;
     }
 
-    public int getCritic() {
+    public String getCritic() {
         return critic;
     }
 
-    public void setCritic(int critic) {
+    public void setCritic(String critic) {
         this.critic = critic;
     }
 
-    public int getDeath() {
+    public String getDeath() {
         return death;
     }
 
-    public void setDeath(int death) {
+    public void setDeath(String death) {
         this.death = death;
     }
 
-    public int getInfectedPerDay() {
+    public String getInfectedPerDay() {
         return infectedPerDay;
     }
 
-    public void setInfectedPerDay(int infectedPerDay) {
+    public void setInfectedPerDay(String infectedPerDay) {
         this.infectedPerDay = infectedPerDay;
     }
 
-    public int getDeathPerDay() {
+    public String getDeathPerDay() {
         return deathPerDay;
     }
 
-    public void setDeathPerDay(int deathPerDay) {
+    public void setDeathPerDay(String deathPerDay) {
         this.deathPerDay = deathPerDay;
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" + "name=" + name + 
+                ", infected=" + infected + 
+                ", cured=" + cured + 
+                ", critic=" + critic + 
+                ", death=" + death + 
+                ", infectedPerDay=" + infectedPerDay + 
+                ", deathPerDay=" + deathPerDay + '}';
     }
     
     

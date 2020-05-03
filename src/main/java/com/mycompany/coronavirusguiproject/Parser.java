@@ -28,8 +28,9 @@ public class Parser {
         String URL = "https://coronavirus-monitor.info/";
         try {
             html = Jsoup.connect(URL).get();
-            System.out.println(html.title());
+            //System.out.println(html.title());
             downloadCountriesList();
+            showCountries();
         } catch (IOException ex) {
             Logger.getLogger(Parser.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -46,8 +47,52 @@ public class Parser {
         countries = new ArrayList<>();
         System.out.println(objects.size());
         for(Element object: objects){
-            System.out.println(object.text());
+            //System.out.println(object.text());
+            Country country =  parseCountry(object);
+            if (country != null)
+                countries.add(country);
         }
+    }
+    
+    private static void showCountries(){
+        for(Country country: countries){
+            System.err.println(country);
+        }
+    }
+    
+    private static Country parseCountry(Element data){
+       try{
+            String name = data.getElementsByAttribute("data-country").first().text();
+            String cured = data.getElementsByAttribute("data-cured").first().text();
+            String critic = data.getElementsByAttribute("data-critical").first().text();
+            
+            String infected_data = data.getElementsByAttribute("data-confirmed").first().text();
+            int index = infected_data.indexOf(" ");
+            String infected;
+            String infected_now = "-";
+            if (index == -1){
+                infected = infected_data;
+            }else{
+                infected = infected_data.substring(0, index);
+                infected_now = infected_data.substring(index+2);
+            }
+            
+            String death_data = data.getElementsByAttribute("data-deaths").first().text();
+            index = death_data.indexOf(" ");
+            String death;
+            String death_now = "-";
+            if (index == -1){
+                death = death_data;
+            }else{
+                death = death_data.substring(0, index);
+                death_now = death_data.substring(index+2);
+            }
+            return new Country(name, infected, cured, critic, death, infected_now, death_now);
+            
+           
+           //System.out.println(name+" "+infected+" "+cured+" "+critic+" "+death);
+       }catch(Exception e){}
+        return null;
     }
     
 }
