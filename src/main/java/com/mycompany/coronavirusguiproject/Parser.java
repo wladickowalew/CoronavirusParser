@@ -5,7 +5,7 @@
  */
 package com.mycompany.coronavirusguiproject;
 
-import Objects.Country;
+import Objects.Place;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -22,7 +22,7 @@ import org.jsoup.select.Elements;
 public class Parser {
     
     private static Document html;
-    private static ArrayList<Country> countries; 
+    private static ArrayList<Place> countries; 
     
     public static void downloadAllData(){
         String URL = "https://coronavirus-monitor.info/";
@@ -50,7 +50,7 @@ public class Parser {
         return names;
     }
     
-    public static Country getCountry(int index){
+    public static Place getPlace(int index){
         return countries.get(index); 
     }
     
@@ -60,46 +60,46 @@ public class Parser {
         System.out.println(objects.size());
         for(Element object: objects){
             //System.out.println(object.text());
-            Country country =  parseCountry(object);
+            Place country =  parsePlace(object);
             if (country != null)
                 countries.add(country);
         }
     }
     
     private static void showCountries(){
-        for(Country country: countries){
+        for(Place country: countries){
             System.err.println(country);
         }
     }
     
-    private static Country parseCountry(Element data){
+    private static Place parsePlace(Element data){
        try{
             String name = data.getElementsByAttribute("data-country").first().text();
+            Place ans = new Place(name);
             String cured = data.getElementsByAttribute("data-cured").first().text();
+            ans.setCured(cured);
             String critic = data.getElementsByAttribute("data-critical").first().text();
+            ans.setCritic(critic);
             
             String infected_data = data.getElementsByAttribute("data-confirmed").first().text();
             int index = infected_data.indexOf(" ");
-            String infected;
-            String infected_now = "-";
             if (index == -1){
-                infected = infected_data;
+                ans.setInfected(infected_data);
             }else{
-                infected = infected_data.substring(0, index);
-                infected_now = infected_data.substring(index+2);
+                ans.setInfected(infected_data.substring(0, index));
+                ans.setInfectedPerDay(infected_data.substring(index + 2));
             }
             
             String death_data = data.getElementsByAttribute("data-deaths").first().text();
             index = death_data.indexOf(" ");
-            String death;
-            String death_now = "-";
             if (index == -1){
-                death = death_data;
+                ans.setDeath(death_data);
             }else{
-                death = death_data.substring(0, index);
-                death_now = death_data.substring(index+2);
+                ans.setDeath(death_data.substring(0, index));
+                ans.setDeathPerDay(death_data.substring(index+2));
+
             }
-            return new Country(name, infected, cured, critic, death, infected_now, death_now);
+            return ans;
             
            
            //System.out.println(name+" "+infected+" "+cured+" "+critic+" "+death);

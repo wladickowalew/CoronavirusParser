@@ -5,7 +5,7 @@
  */
 package com.mycompany.coronavirusguiproject;
 
-import Objects.Country;
+import Objects.Place;
 import java.util.ArrayList;
 
 /**
@@ -41,7 +41,23 @@ public class Form extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         countriesList = new javax.swing.JList<>();
         nameObject = new javax.swing.JLabel();
-        coutnryName = new javax.swing.JLabel();
+        nameLbl = new javax.swing.JLabel();
+        nameObject1 = new javax.swing.JLabel();
+        infectedlbl = new javax.swing.JLabel();
+        nameObject2 = new javax.swing.JLabel();
+        infectedPerDaylbl = new javax.swing.JLabel();
+        nameObject3 = new javax.swing.JLabel();
+        curedlbl = new javax.swing.JLabel();
+        nameObject4 = new javax.swing.JLabel();
+        criticLbl = new javax.swing.JLabel();
+        nameObject5 = new javax.swing.JLabel();
+        deathlbl = new javax.swing.JLabel();
+        nameObject6 = new javax.swing.JLabel();
+        deathPerDaylbl = new javax.swing.JLabel();
+        nameObject7 = new javax.swing.JLabel();
+        deathPercentlbl = new javax.swing.JLabel();
+        nameObject8 = new javax.swing.JLabel();
+        curedPerDaylbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,37 +79,148 @@ public class Form extends javax.swing.JFrame {
         jScrollPane1.setViewportView(countriesList);
 
         nameObject.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        nameObject.setText("Страна:");
+        nameObject.setText("Место:");
 
-        coutnryName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameLbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameLbl.setText("name");
+
+        nameObject1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject1.setText("Заражено:");
+
+        infectedlbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        infectedlbl.setText("name");
+
+        nameObject2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject2.setText("Заражено сегодня:");
+
+        infectedPerDaylbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        infectedPerDaylbl.setText("name");
+
+        nameObject3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject3.setText("Вылечено:");
+
+        curedlbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        curedlbl.setText("name");
+
+        nameObject4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject4.setText("Критически больны:");
+
+        criticLbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        criticLbl.setText("name");
+
+        nameObject5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject5.setText("Смертей:");
+
+        deathlbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        deathlbl.setText("name");
+
+        nameObject6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject6.setText("Смертей сегодня:");
+
+        deathPerDaylbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        deathPerDaylbl.setText("name");
+
+        nameObject7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject7.setText("Процент смертности:");
+
+        deathPercentlbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        deathPercentlbl.setText("name");
+
+        nameObject8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        nameObject8.setText("Вылечено сегодня:");
+
+        curedPerDaylbl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        curedPerDaylbl.setText("name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(firstLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(73, 73, 73)
-                .addComponent(nameObject, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(coutnryName, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nameObject, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameObject1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameObject2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                            .addComponent(nameObject3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(infectedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(infectedPerDaylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(curedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(nameObject4, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                .addComponent(nameObject5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nameObject6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(nameObject7))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(criticLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deathlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deathPerDaylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deathPercentlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nameObject8, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(curedPerDaylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 46, Short.MAX_VALUE))
+            .addComponent(firstLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(firstLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+                        .addComponent(nameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infectedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infectedPerDaylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(curedlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nameObject, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(coutnryName))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(nameObject, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameObject1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameObject2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameObject3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameObject8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(curedPerDaylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(criticLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(deathlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(deathPerDaylbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(deathPercentlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nameObject4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameObject5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameObject6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(nameObject7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,8 +228,16 @@ public class Form extends javax.swing.JFrame {
 
     private void countriesListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_countriesListMouseClicked
         int index = countriesList.getSelectedIndex();
-        Country country = Parser.getCountry(index);
-        coutnryName.setText(country.getName());
+        Place place = Parser.getPlace(index);
+        nameLbl.setText(place.getName());
+        criticLbl.setText(place.getCritic());
+        infectedlbl.setText(place.getInfected());
+        infectedPerDaylbl.setText(place.getInfectedPerDay());
+        curedlbl.setText(place.getCured());
+        curedPerDaylbl.setText(place.getCuredPerDay());
+        deathlbl.setText(place.getDeath());
+        deathPerDaylbl.setText(place.getDeathPerDay());
+        deathPercentlbl.setText(place.getDeathPercent());
     }//GEN-LAST:event_countriesListMouseClicked
 
     /**
@@ -142,9 +277,25 @@ public class Form extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> countriesList;
-    private javax.swing.JLabel coutnryName;
+    private javax.swing.JLabel criticLbl;
+    private javax.swing.JLabel curedPerDaylbl;
+    private javax.swing.JLabel curedlbl;
+    private javax.swing.JLabel deathPerDaylbl;
+    private javax.swing.JLabel deathPercentlbl;
+    private javax.swing.JLabel deathlbl;
     private javax.swing.JLabel firstLabel;
+    private javax.swing.JLabel infectedPerDaylbl;
+    private javax.swing.JLabel infectedlbl;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nameLbl;
     private javax.swing.JLabel nameObject;
+    private javax.swing.JLabel nameObject1;
+    private javax.swing.JLabel nameObject2;
+    private javax.swing.JLabel nameObject3;
+    private javax.swing.JLabel nameObject4;
+    private javax.swing.JLabel nameObject5;
+    private javax.swing.JLabel nameObject6;
+    private javax.swing.JLabel nameObject7;
+    private javax.swing.JLabel nameObject8;
     // End of variables declaration//GEN-END:variables
 }

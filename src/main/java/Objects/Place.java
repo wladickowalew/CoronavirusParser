@@ -9,24 +9,31 @@ package Objects;
  *
  * @author ROOT
  */
-public class Country {
-    
+public class Place {
+    private final String DEFAULT_ANWER = "Нет данных";
     private String name;
     private String infected;
+    private String infectedPerDay;
     private String cured;
+    private String curedPerDay; 
     private String critic;
     private String death;    
-    private String infectedPerDay;
     private String deathPerDay;
+    private String deathPercent;
+    
+    {
+        infected = DEFAULT_ANWER;
+        infectedPerDay = DEFAULT_ANWER;
+        cured = DEFAULT_ANWER;
+        curedPerDay = DEFAULT_ANWER; 
+        critic = DEFAULT_ANWER;
+        death = DEFAULT_ANWER;    
+        deathPerDay = DEFAULT_ANWER;
+        deathPercent = DEFAULT_ANWER;
+    }
 
-    public Country(String name, String infected, String cured, String critic, String death, String infectedPerDay, String deathPerDay) {
+    public Place(String name) {
         this.name = name;
-        this.infected = infected;
-        this.cured = cured;
-        this.critic = critic;
-        this.death = death;
-        this.infectedPerDay = infectedPerDay;
-        this.deathPerDay = deathPerDay;
     }
 
     public String getName() {
@@ -85,17 +92,25 @@ public class Country {
         this.deathPerDay = deathPerDay;
     }
 
+    public String getCuredPerDay() {
+        return curedPerDay;
+    }
+
+    public void setCuredPerDay(String curedPerDay) {
+        this.curedPerDay = curedPerDay;
+    }
+
+    public String getDeathPercent() {
+        return deathPercent;
+    }
+
+    public void setDeathPercent(String deathPercent) {
+        this.deathPercent = deathPercent;
+    }
+
     @Override
     public String toString() {
-        return "Country{" + "name=" + name + 
-                ", infected=" + infected + 
-                ", cured=" + cured + 
-                ", critic=" + critic + 
-                ", death=" + death + 
-                ", infectedPerDay=" + infectedPerDay + 
-                ", deathPerDay=" + deathPerDay + '}';
+        return "Place{name=" + name + ", infected=" + infected + ", infectedPerDay=" + infectedPerDay + ", cured=" + cured + ", curedPerDay=" + curedPerDay + ", critic=" + critic + ", death=" + death + ", deathPerDay=" + deathPerDay + ", deathPercent=" + deathPercent + '}';
     }
-    
-    
-    
+   
 }
